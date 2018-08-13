@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Componet-1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+    <h1>componet-1</h1>
+    <hr>
+    <div id="app">
+        <lucaszeng>
+        </LucasZeng>
+        <panda :from-here="message"></panda>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('lucaszeng', {
+            template: `<div style="color:red">我是全局的組件</div>`
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'China'
+            },
+            components: {
+                "panda": {
+                    template: `<div style="color:blue">Panda from {{fromHere}}</div>`,
+                    props: ['fromHere']
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
