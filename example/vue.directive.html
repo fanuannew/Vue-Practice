@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VUE.directive自定義API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+    <h1>Vue2.0</h1>
+    <hr>
+    <div id="app">
+        <div v-jspang="color">{{num}}</div>
+        <p>
+            <button @click="add">ADD</button>
+        </p>
+        <p>
+            <button onclick="unbind()">解Bind</button>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        function unbind() {
+            app.$destroy();
+        }
+        Vue.directive("jspang", function (el, binding) {
+            // console.log(el);
+            // console.log(binding);
+            // console.log(binding.expression);
+            el.style = "color:" + binding.value;
+        });
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 10,
+                color: 'red'
+            },
+            methods: {
+                add: function () {
+                    this.num++;
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
