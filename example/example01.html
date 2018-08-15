@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VUE.extend擴展實例</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <h1>example method demo</h1>
+    <hr>
+
+    <div id="app">{{message}}</div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello world!'
+            },
+            mounted: function () {
+                $("#app").html("我是Jquery!");
+            },
+            methods: {
+                add: function () {
+                    console.log("使用構造器內部的add方法");
+                }
+            }
+        });
+        app.add();
+    </script>
+</body>
+
+</html>
