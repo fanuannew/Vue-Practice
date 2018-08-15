@@ -7,6 +7,7 @@
     <router-link to="/Hi">HI頁面</router-link>
     <router-link to="/Hi/Hi1">HI頁面1</router-link>
     <router-link to="/Hi/Hi2">HI頁面2</router-link>
+    <router-link to="/Count">Vuex Count</router-link>
   </div>
   <router-view/>
   </div>
