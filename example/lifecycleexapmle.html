@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VUE生命週期</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <h1>生命週期</h1>
+    <hr>
+
+    <div id="app">
+        {{count}}}
+        <p><button @click="add">add</button></p>
+
+    </div>
+    <p><button onclick="app.$destroy()">銷毀</button></p>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                count: 1
+            },
+            methods: {
+                add: function () {
+                    this.count++;
+                }
+            },
+            beforeCreate: function () {
+                console.log('1-beforeCreate 初始化之前');
+            },
+            created: function () {
+                console.log('2-created創建完成');
+            },
+            beforeMount: function () {
+                console.log('3-beforeMount掛載之前');
+            },
+            mounted: function () {
+                console.log('4-mounted 掛載之後');
+            },
+            beforeUpdate: function () {
+                console.log('資料更新前');
+            },
+            activated: function () {
+
+            },
+            deactivated: function () {
+
+            },
+            beforeDestroy: function () {
+                console.log('銷毀前');
+            },
+            destroyed: function () {
+                console.log('銷毀後');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
