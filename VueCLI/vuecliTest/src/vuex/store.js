@@ -3,7 +3,9 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-    count: 3
+    count: 3,
+    sonicStatus: '1',
+    gameArea: ''
 }
 const mutations = {
     add(state) {
@@ -11,6 +13,13 @@ const mutations = {
     },
     reduce(state) {
         state.count--;
+    },
+    sonicStatus(res){
+        console.log("設定成功: res: "+ res);
+        state.sonicStatus = res
+    },
+    initImgArr(res){
+        state.gameArea = res
     }
 }
 const getters = {
@@ -25,6 +34,12 @@ const actions = {
     },
     reduceAction({ commit }) {
         commit('reduce');
+    },
+    setSonicStatusAct({ commit }) {
+        commit('SonicStatus');
+    },
+    initImgArrAct({ commit }) {
+        commit('initImgArr');
     }
 }
 
